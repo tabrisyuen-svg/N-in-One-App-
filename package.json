@@ -1,10 +1,17 @@
 {
-  "homepage": "https://你的GitHub帳號.github.io/你的-REPO-名稱",
+  "name": "tabrisyuen-svg",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^5.0.0"
   }
 }
