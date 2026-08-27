@@ -6,7 +6,6 @@ import IMGResizer from './IMGResizer';
 
 export default function App() {
   const [tab, setTab] = useState('table');
-
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans">
       <nav className="sticky top-0 z-30 h-14 bg-gray-950/95 backdrop-blur border-b border-gray-800 px-6 flex items-center gap-2">
@@ -24,7 +23,6 @@ export default function App() {
           ))}
         </div>
       </nav>
-
       <AnimatePresence mode="wait">
         {tab === 'table' && (
           <motion.div key="table" initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }} transition={{ duration:0.15 }}>
