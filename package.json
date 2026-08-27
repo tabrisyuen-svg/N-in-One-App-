@@ -1,5 +1,5 @@
 {
-  "name": "tabrisyuen-svg",
+  "name": "tabrisyuen-tools",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -12,7 +12,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "xlsx": "^0.18.5",
-    "lucide-react": "^0.400.0",
+    "lucide-react": "^1.31.0",
     "framer-motion": "^11.0.0"
   },
   "devDependencies": {
