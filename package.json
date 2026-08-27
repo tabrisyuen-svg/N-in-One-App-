@@ -1,0 +1,10 @@
+{
+  "homepage": "https://你的GitHub帳號.github.io/你的-REPO-名稱",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
+}
