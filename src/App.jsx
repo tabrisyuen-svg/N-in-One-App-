@@ -5,6 +5,7 @@ const TOOLS = [
   { id: 'table', label: 'Table Mapper', Icon: Table2, src: 'https://table-mapper.vercel.app/' },
   { id: 'img',   label: 'IMG Resizer',  Icon: Image,  src: 'https://img-rename-resize-tau.vercel.app/' },
   { id: 'edm',   label: 'EDM Builder',  Icon: Mail,   src: 'https://edm-builder-ebon.vercel.app/' },
+  { id: 'CS',   label: 'CS',  Icon: people,   src: 'https://cs-template.vercel.app/' },
 ];
 
 export default function App() {
