@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Table2, Image, Mail, Headphones } from 'lucide-react';
-import IMGResizer from './IMGResizer';
-import TableMapper from './TableMapper';
 
 const TABS = [
   { id: 'table', label: 'Table Mapper', Icon: Table2 },
@@ -37,13 +35,19 @@ export default function App() {
 
       {/* Content */}
       <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-        {tab === 'table' && <TableMapper />}
-        {tab === 'img'   && <IMGResizer />}
-        {tab === 'edm'   && (
+        {tab === 'table' && (
+          <iframe src="https://table-mapper.vercel.app/"
+            style={{ flex: 1, border: 'none', width: '100%' }} title="Table Mapper" />
+        )}
+        {tab === 'img' && (
+          <iframe src="https://img-rename-resize-tau.vercel.app/"
+            style={{ flex: 1, border: 'none', width: '100%' }} title="IMG Resizer" />
+        )}
+        {tab === 'edm' && (
           <iframe src="https://edm-builder-ebon.vercel.app/"
             style={{ flex: 1, border: 'none', width: '100%' }} title="EDM Builder" />
         )}
-        {tab === 'cs'    && (
+        {tab === 'cs' && (
           <iframe src="https://cs-template.vercel.app/"
             style={{ flex: 1, border: 'none', width: '100%' }} title="CS Template" />
         )}
