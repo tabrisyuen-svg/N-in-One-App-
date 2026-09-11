@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { Table2, Image, Mail, Headphones, ClipboardList, PenTool, PackageSearch } from 'lucide-react';
 
 const TABS = [
-  { id: 'table',    label: 'Table Mapper',  Icon: Table2 },
-  { id: 'img',      label: 'IMG Resizer',   Icon: Image },
-  { id: 'edm',      label: 'EDM Builder',   Icon: Mail },
-  { id: 'cs',       label: 'CS Template',   Icon: Headphones },
-  { id: 'warehouse', label: '庫存調整',      Icon: ClipboardList },
-  { id: 'ig',       label: 'IG 文案',        Icon: PenTool },
-  { id: 'wh-search', label: '倉庫查貨',      Icon: PackageSearch },
+  { id: 'edm',       label: 'EDM Builder',  Icon: Mail },
+  { id: 'table',     label: 'Table Mapper', Icon: Table2 },
+  { id: 'img',       label: 'IMG Resizer',  Icon: Image },
+  { id: 'cs',        label: 'CS Template',  Icon: Headphones },
+  { id: 'wh-search', label: '倉庫查貨',     Icon: PackageSearch },
+  { id: 'warehouse', label: '庫存調整',     Icon: ClipboardList },
+  { id: 'ig',        label: 'RICO IG 文案', Icon: PenTool },
 ];
 
 export default function App() {
-  const [tab, setTab] = useState('table');
+  const [tab, setTab] = useState('edm');
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', background: '#030712' }}>
@@ -38,6 +38,10 @@ export default function App() {
 
       {/* Content */}
       <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+        {tab === 'edm' && (
+          <iframe src="https://edm-builder-ebon.vercel.app/"
+            style={{ flex: 1, border: 'none', width: '100%' }} title="EDM Builder" />
+        )}
         {tab === 'table' && (
           <iframe src="https://table-mapper.vercel.app/"
             style={{ flex: 1, border: 'none', width: '100%' }} title="Table Mapper" />
@@ -46,13 +50,13 @@ export default function App() {
           <iframe src="https://img-rename-resize-tau.vercel.app/"
             style={{ flex: 1, border: 'none', width: '100%' }} title="IMG Resizer" />
         )}
-        {tab === 'edm' && (
-          <iframe src="https://edm-builder-ebon.vercel.app/"
-            style={{ flex: 1, border: 'none', width: '100%' }} title="EDM Builder" />
-        )}
         {tab === 'cs' && (
           <iframe src="https://cs-template.vercel.app/"
             style={{ flex: 1, border: 'none', width: '100%' }} title="CS Template" />
+        )}
+        {tab === 'wh-search' && (
+          <iframe src="https://wearehouse-eight.vercel.app/"
+            style={{ flex: 1, border: 'none', width: '100%' }} title="倉庫查貨" />
         )}
         {tab === 'warehouse' && (
           <iframe src="https://warehouse-adjust.vercel.app/"
@@ -60,11 +64,7 @@ export default function App() {
         )}
         {tab === 'ig' && (
           <iframe src="https://ig-copywrite.vercel.app/"
-            style={{ flex: 1, border: 'none', width: '100%' }} title="IG 文案生成器" />
-        )}
-        {tab === 'wh-search' && (
-          <iframe src="https://wearehouse-eight.vercel.app/"
-            style={{ flex: 1, border: 'none', width: '100%' }} title="倉庫查貨" />
+            style={{ flex: 1, border: 'none', width: '100%' }} title="RICO IG 文案" />
         )}
       </div>
 
