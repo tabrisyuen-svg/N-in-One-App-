@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Table2, Image, Mail, Headphones } from 'lucide-react';
+import { Table2, Image, Mail, Headphones, ClipboardList, PenTool, PackageSearch } from 'lucide-react';
 
 const TABS = [
-  { id: 'table', label: 'Table Mapper', Icon: Table2 },
-  { id: 'img',   label: 'IMG Resizer',  Icon: Image },
-  { id: 'edm',   label: 'EDM Builder',  Icon: Mail },
-  { id: 'cs',    label: 'CS Template',  Icon: Headphones },
+  { id: 'table',    label: 'Table Mapper',  Icon: Table2 },
+  { id: 'img',      label: 'IMG Resizer',   Icon: Image },
+  { id: 'edm',      label: 'EDM Builder',   Icon: Mail },
+  { id: 'cs',       label: 'CS Template',   Icon: Headphones },
+  { id: 'warehouse', label: '庫存調整',      Icon: ClipboardList },
+  { id: 'ig',       label: 'IG 文案',        Icon: PenTool },
+  { id: 'wh-search', label: '倉庫查貨',      Icon: PackageSearch },
 ];
 
 export default function App() {
@@ -15,7 +18,7 @@ export default function App() {
     <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', background: '#030712' }}>
 
       {/* Tab Bar */}
-      <nav style={{ height: 56, background: '#030712', borderBottom: '1px solid #1f2937', padding: '0 24px', display: 'flex', alignItems: 'center', flexShrink: 0 }}>
+      <nav style={{ height: 56, background: '#030712', borderBottom: '1px solid #1f2937', padding: '0 24px', display: 'flex', alignItems: 'center', flexShrink: 0, overflowX: 'auto' }}>
         <div style={{ display: 'flex', gap: 4, background: '#111827', borderRadius: 12, padding: 4 }}>
           {TABS.map(({ id, label, Icon }) => (
             <button key={id} onClick={() => setTab(id)}
@@ -23,7 +26,7 @@ export default function App() {
                 display: 'flex', alignItems: 'center', gap: 8,
                 padding: '6px 16px', borderRadius: 8, border: 'none',
                 cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                transition: 'all 0.15s',
+                transition: 'all 0.15s', whiteSpace: 'nowrap',
                 background: tab === id ? '#2563eb' : 'transparent',
                 color: tab === id ? '#fff' : '#9ca3af',
               }}>
@@ -50,6 +53,18 @@ export default function App() {
         {tab === 'cs' && (
           <iframe src="https://cs-template.vercel.app/"
             style={{ flex: 1, border: 'none', width: '100%' }} title="CS Template" />
+        )}
+        {tab === 'warehouse' && (
+          <iframe src="https://warehouse-adjust.vercel.app/"
+            style={{ flex: 1, border: 'none', width: '100%' }} title="庫存調整" />
+        )}
+        {tab === 'ig' && (
+          <iframe src="https://ig-copywrite.vercel.app/"
+            style={{ flex: 1, border: 'none', width: '100%' }} title="IG 文案生成器" />
+        )}
+        {tab === 'wh-search' && (
+          <iframe src="https://wearehouse-eight.vercel.app/"
+            style={{ flex: 1, border: 'none', width: '100%' }} title="倉庫查貨" />
         )}
       </div>
 
