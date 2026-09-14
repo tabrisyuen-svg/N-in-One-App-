@@ -7,7 +7,6 @@ const TABS = [
   { id: 'img',       label: 'IMG Resizer',  Icon: Image },
   { id: 'cs',        label: 'CS Template',  Icon: Headphones },
   { id: 'wh-search', label: '倉庫查貨',     Icon: PackageSearch },
-  { id: 'warehouse', label: '庫存調整',     Icon: ClipboardList },
   { id: 'ig',        label: 'RICO IG 文案', Icon: PenTool },
 ];
 
@@ -57,10 +56,6 @@ export default function App() {
         {tab === 'wh-search' && (
           <iframe src="https://wearehouse-eight.vercel.app/"
             style={{ flex: 1, border: 'none', width: '100%' }} title="倉庫查貨" />
-        )}
-        {tab === 'warehouse' && (
-          <iframe src="https://warehouse-adjust.vercel.app/"
-            style={{ flex: 1, border: 'none', width: '100%' }} title="庫存調整" />
         )}
         {tab === 'ig' && (
           <iframe src="https://ig-copywrite.vercel.app/"
